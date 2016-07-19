@@ -1,4 +1,4 @@
-#include "MainWindow.hpp"
+ï»¿#include "MainWindow.hpp"
 #include "VirtualClassMaker.hpp"
 #include "ClassNameReadWrite.hpp"
 #include <QtWidgets/qboxlayout.h>
@@ -18,18 +18,18 @@ class Widget :public QWidget{
     QLineEdit * outPutDirName_;
 public:
     Widget() {
-    
+
         auto varLayout=new QFormLayout;
         this->setLayout(varLayout);
 
         {
             auto varHLayout=new QHBoxLayout;
-            varLayout->addRow(QString::fromUtf8(u8R"(ÊäÈëÎÄ¼þÃû)"),varHLayout);
+            varLayout->addRow(QString::fromUtf8(u8R"(è¾“å…¥æ–‡ä»¶å)"),varHLayout);
 
             auto varLineEdit=new QLineEdit;
             varHLayout->addWidget(varLineEdit);
-            
-            auto varPushButton=new QPushButton(QString::fromUtf8(u8R"(Ñ¡ÔñÎÄ¼þ)"));
+
+            auto varPushButton=new QPushButton(QString::fromUtf8(u8R"(é€‰æ‹©æ–‡ä»¶)"));
             varHLayout->addWidget(varPushButton);
 
             connect(varPushButton,&QPushButton::pressed,this,
@@ -45,12 +45,12 @@ public:
 
         {
             auto varHLayout=new QHBoxLayout;
-            varLayout->addRow(QString::fromUtf8(u8R"(Êä³öÎÄ¼þ¼Ð)"),varHLayout);
+            varLayout->addRow(QString::fromUtf8(u8R"(è¾“å‡ºæ–‡ä»¶å¤¹)"),varHLayout);
 
             auto varLineEdit=new QLineEdit;
             varHLayout->addWidget(varLineEdit);
 
-            auto varPushButton=new QPushButton(QString::fromUtf8(u8R"(Ñ¡ÔñÎÄ¼þ¼Ð)"));
+            auto varPushButton=new QPushButton(QString::fromUtf8(u8R"(é€‰æ‹©æ–‡ä»¶å¤¹)"));
             varHLayout->addWidget(varPushButton);
 
             connect(varPushButton,&QPushButton::pressed,this,
@@ -65,7 +65,7 @@ public:
         }
 
         {
-            auto varButton=new QPushButton(QString::fromUtf8(u8R"(Ö´ÐÐ)"));
+            auto varButton=new QPushButton(QString::fromUtf8(u8R"(æ‰§è¡Œ)"));
             varLayout->addRow(varButton);
 
             connect(varButton,&QPushButton::pressed,this,
@@ -88,9 +88,9 @@ public:
                 {
                     QFile file(dirName+"/VirtualClass.hpp");
                     file.open(QIODevice::WriteOnly|QIODevice::Text);
-                    if (false==file.isOpen()) { 
+                    if (false==file.isOpen()) {
                         qDebug()<<"can not create"<<(dirName+"/VirtualClass.hpp");
-                        return; 
+                        return;
                     }
                     QTextStream varStream(&file);
                     varStream.setCodec("UTF-8");
@@ -101,9 +101,9 @@ public:
                 {
                     QFile file(dirName+"/JustInCppFileVirtualClass.hpp");
                     file.open(QIODevice::WriteOnly|QIODevice::Text);
-                    if (false==file.isOpen()) { 
+                    if (false==file.isOpen()) {
                         qDebug()<<"can not create"<<(dirName+"/JustInCppFileVirtualClass.hpp");
-                        return; 
+                        return;
                     }
                     QTextStream varStream(&file);
                     varStream.setCodec("UTF-8");
