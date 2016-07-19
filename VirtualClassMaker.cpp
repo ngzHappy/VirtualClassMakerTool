@@ -144,14 +144,14 @@ public:
                     varI.makeFullName()
                     +"),_data_"+
                     varI.makeFullName()
-                    +"(arg) {}\n";
+                    +"_(arg) {}\n";
 
                 ans+="    VirtualClass(const "+varI.makeFullNamespace()+varI.className
                     +" *arg):_type_(Type::IndexConst_"+
                     varI.makeFullName()
                     +"),_data_"+
                     varI.makeFullName()
-                    +"(const_cast< "+
+                    +"_(const_cast< "+
                     varI.makeFullNamespace()+varI.className
                     +" * >(arg)) {}\n";
 
